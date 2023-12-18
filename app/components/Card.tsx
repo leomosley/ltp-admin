@@ -36,7 +36,7 @@ export default function Card({ title, description, children } : CardProps & {chi
 
   return (
     <motion.div
-      className="animated-feature-cards relative w-full h-full drop-shadow-[0_0_15px_rgba(49,49,49,0.2)]"
+      className="card relative w-full h-full drop-shadow-[0_0_15px_rgba(49,49,49,0.2)]"
       onMouseMove={handleMouseMove}
       style={
         {

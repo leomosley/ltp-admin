@@ -1,14 +1,25 @@
-import React from 'react';
-import { auth } from '@/database/firebase';
+import React, { useEffect, useState } from 'react';
+import { fetchData } from '@/database/fetch-data';
 
+// Components
+import LogoutButton from './LogoutButton';
+import Card from './Card';
 
 export default function AdminPanel() {
+  const [works, setWorks] = useState();
+  const [images, setImages] = useState();
+  
+  const data: Promise<any> = fetchData().then((value) => {
+    setWorks(value.work);
+    setImages(value.image);
+  });
 
-  const logout = (): Promise<void> => {
-    return auth.signOut();
-  };
-
+  // Map works whilst maintaining uid
   return (
-    <button onClick={logout}>logout</button>
+   <div className="">
+      <div className="fixed top-0 right-2">
+        <LogoutButton />
+      </div>
+   </div>
   )
 }
