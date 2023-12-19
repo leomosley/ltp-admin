@@ -21,14 +21,12 @@ export default function Home() {
   }, [currentUser]);
 
   return (
-    <section className="relative overflow-hidden w-screen h-screen">
-      <div className="p-5 w-screen h-screen">
-        {currentUser? (
-          <AdminPanel />
-          ) : (
-          <Login />
-        )}
-      </div>
-    </section>
+    <div className="p-5 w-screen h-screen">
+      {currentUser? (
+        <AdminPanel />
+      ) : (
+        <Login />
+      )}
+    </div>
   )
 }

@@ -53,7 +53,7 @@ export default function Card({ title, description, children } : CardProps & {chi
         )}
       >
         <div className="p-5 h-full w-full">
-          <div className="flex w-5/6 flex-col gap-3">
+          <div className="flex w-full flex-col gap-1">
             {title && <h2 className="text-xl font-bold text-zinc-200 tracking-tight md:text-xl">{title}</h2>}
             {description && (
             <p className="text-sm leading-5 text-zinc-400 sm:text-base sm:leading-7">
