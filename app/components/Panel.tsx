@@ -35,7 +35,7 @@ export default function Panel({ key, data } : { key: string, data: Data }) {
   return (
     <div 
       className="h-[225px] w-[275px] sm:w-[300px] sm:h-[250px] rounded-3xl cursor-pointer"
-      onClick={() => router.push(`/${data.uid}`)}
+      onClick={() => router.push(`/${encodeURI(data.uid)}`)}
     >
       <Card title={data.name} description={data.uid}>
         <div>

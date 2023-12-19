@@ -26,7 +26,7 @@ interface WorkWithImages extends Work {
 export default function Admin() {
   const router = useRouter();
   const pathname = usePathname();
-  const uid = pathname.slice(1);
+  const uid = decodeURI(pathname).slice(1);
 
   const [data, setData] = useState<WorkWithImages | null>();
   
