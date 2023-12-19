@@ -76,7 +76,7 @@ export default function Admin() {
           <WorkTitle />
           <WorkType />
           <WorkDescription />
-          <Images /> className="text-slate-100"
+          <Images />
         </div>
       )}
       {!data && <div className="fixed top-1/2 left-1/2 text-slate-100 text-lg">Loading...</div>}
