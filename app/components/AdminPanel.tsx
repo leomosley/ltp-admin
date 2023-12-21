@@ -52,7 +52,7 @@ export default function AdminPanel() {
             <Panel key={item.uid} data={item} />
           ))
         ) : ( 
-          <div className="fixed top-1/2 left-1/2 text-slate-100 text-lg">Loading...</div>
+          <div className="fixed top-1/2 left-1/2 text-zinc-200 text-lg">Loading...</div>
           )
         }
    </div>

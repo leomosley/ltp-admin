@@ -31,7 +31,7 @@ export default function Login() {
   }
   return (
     <div className="flex w-full h-full justify-center items-center">
-      <div className="w-[300px] sm:w-2/4 lg:w-1/4">
+      <div className="w-[300px] sm:w-2/4 lg:w-1/3">
         <Card>
           <div className="flex justify-center items-center m-auto w-[80%] h-20">
             <span className="text-3xl font-bold text-zinc-200 tracking-tight">Login</span>
