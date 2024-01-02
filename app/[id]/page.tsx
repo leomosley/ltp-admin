@@ -1,6 +1,6 @@
 'use client';
-import React, { SetStateAction, useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import React, { use, useEffect, useState } from 'react';
+import { usePathname, redirect,  useRouter } from 'next/navigation';
 import { getData } from '@/api/database/fetch/route';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,6 +8,8 @@ import Link from 'next/link';
 // Components
 import Card from '../components/Card';
 import { updateData } from '@/api/database/post/route';
+import { auth } from '@/api/firebase';
+import { redir } from '../actions';
 
 interface ImageMap {
   [key: string]: string;
@@ -37,7 +39,10 @@ export default function Admin() {
   const [descKey, setDescKey] = useState<number>(0);
 
   useEffect(() => {
-    if (id) {
+
+    if (!auth.currentUser) {
+      redir();
+    } else if (id) {
       setLoading(true);
       // @ts-ignore
       getData(id).then((response: FetchResponse) => {
