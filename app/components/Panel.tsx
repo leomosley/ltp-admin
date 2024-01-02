@@ -5,39 +5,28 @@ import { useRouter } from 'next/navigation';
 // Components
 import Card from './Card';
 
-interface ImageObject {
-  imageURL: string;
+interface ImageMap {
+  [key: string]: string;
 }
 
-interface WorkImages {
-  [uid: string]: ImageObject;
-}
-
-interface Work {
-  date: string;
-  description: string;
+interface FetchResponse {
   id: string;
-  name: string;
+  description: string;
+  title: string;
   type: string;
+  images: ImageMap;
 }
 
-interface WorkWithImages extends Work {
-  images: WorkImages;
-}
-
-interface Data extends WorkWithImages {
-  uid: string;
-}
-
-export default function Panel({ key, data } : { key: string, data: Data }) {
+export default function Panel({ key, data } : { key: string, data: FetchResponse }) {
   const router = useRouter();
-
+  console.log(data);
+  
   return (
     <div 
       className="h-[225px] w-[275px] sm:w-[300px] sm:h-[250px] rounded-3xl cursor-pointer"
-      onClick={() => router.push(`/${encodeURI(data.uid)}`)}
+      onClick={() => router.push(`/${encodeURI(data.id)}`)}
     >
-      <Card title={data.name} description={data.uid}>
+      <Card title={data.title} description={data.id}>
         <div>
           
         </div>

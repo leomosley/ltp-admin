@@ -19,3 +19,13 @@ body {
   content: '';
   inset: -1px;
 }
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #52525b;
+  border-radius: 5px;
+}

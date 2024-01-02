@@ -1,8 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { auth } from '@/database/firebase';
+import { auth } from '@/api/firebase';
 import firebase from 'firebase/compat/app';
-import styles from './page.module.css';
 
 // Components
 import Login from './components/Login';

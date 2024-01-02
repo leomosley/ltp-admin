@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import firebase from 'firebase/compat/app';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@/database/firebase';
+import { auth } from '@/api/firebase';
 
 // Components
 import Card from './Card';
@@ -54,7 +54,6 @@ export default function Login() {
               className="flex w-auto mx-auto mt-2 items-center justify-center text-center gap-3 overflow-hidden rounded-lg p-1 pl-3 pr-3
                          text-lg font-bold border-2 border-neutral-400/10 bg-neutral-400/10 text-zinc-200
                          cursor-pointer disabled:cursor-not-allowed duration-300 hover:bg-neutral-400/20 hover:scale-105"
-              type="submit" 
               onClick={handleSumbit}
               disabled={loading || (email.length === 0 || password.length === 0)}
             >Login
